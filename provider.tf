@@ -5,23 +5,23 @@ terraform {
       version = "~> 5.0"
     }
   }
- # Adding Backend as S3 for Remote State Storage
+
   backend "s3" {
-    bucket = "cluster-003"
+    bucket = "cluster-003-2302"   # changed
     key    = "ajs/terraform.tfstate"
-    region = "ap-southeast-1"   
+    region = "ap-south-1"         # changed
   }
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-1"   # kept SAME as your old code
 }
 
 locals {
-  region = "us-east-1"
+  region = "us-east-1"   # kept SAME
   name = "vgs_cluster"
   vpc_cidr = "10.123.0.0/16"
-  azs      = ["us-east-1a", "us-east-1b"]
+  azs      = ["us-east-1a", "us-east-1b"]   # kept SAME
   public_subnets  = ["10.123.1.0/24", "10.123.2.0/24"]
   private_subnets = ["10.123.3.0/24", "10.123.4.0/24"]
   intra_subnets   = ["10.123.5.0/24", "10.123.6.0/24"]
@@ -29,5 +29,3 @@ locals {
     Example = local.name
   }
 }
-
-
