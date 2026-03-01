@@ -7,9 +7,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "cluster-003-2302"   # changed
+    bucket = "cluster-003-230296"   # changed
     key    = "ajs/terraform.tfstate"
-    region = "ap-south-1"         # changed
+    region = "us-east-1"         # changed
   }
 }
 
