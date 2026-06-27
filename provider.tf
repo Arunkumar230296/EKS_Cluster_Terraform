@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "cluster-003-230296"   # changed
+    bucket = "project-new-27"   # changed
     key    = "ajs/terraform.tfstate"
     region = "us-east-1"         # changed
   }
